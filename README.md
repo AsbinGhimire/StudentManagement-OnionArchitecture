@@ -1,55 +1,68 @@
-StudentManagement.OnionArchitecture
+**StudentManagement.OnionArchitecture**
 Overview
 
-StudentManagement.OnionArchitecture is a .NET-based Student Management System implemented using Onion Architecture principles. The project demonstrates clean separation of concerns, dependency inversion, and a scalable layered structure suitable for enterprise-grade applications.
+StudentManagement.OnionArchitecture is a .NET-based Student Management System built using Onion Architecture principles.
 
-The solution is designed to keep the core business logic independent from infrastructure and external frameworks.
+The project demonstrates:
 
-Architecture
+Clean separation of concerns
 
-This project follows the Onion Architecture pattern, where dependencies flow inward toward the core domain layer.
+Dependency inversion
+
+Scalable layered structure
+
+Framework-independent domain design
+
+The core business logic remains isolated from infrastructure and external frameworks, making the system maintainable, testable, and extensible.
+
+**Architecture**
+
+This solution follows the Onion Architecture pattern, where dependencies flow inward toward the core domain layer.
 
 Presentation → Infrastructure → Application → Domain
 
-Domain
+**Layer Responsibilities**
+Domain (Core Layer)
 
 Core business entities (e.g., Student)
 
-Business rules
+Business rules and validations
 
-Repository interfaces
+Repository interfaces (contracts)
 
-No external framework dependencies
+No dependency on external frameworks
 
-Application
+**Application**
 
 Use cases (Create, Update, Delete, Retrieve Students)
 
-DTOs
+DTOs (Data Transfer Objects)
 
 Service abstractions
 
-Business workflows
+Business workflows and orchestration
 
-Infrastructure
+**Infrastructure**
 
 Entity Framework Core implementation
 
 Repository implementations
 
-Database context
+Database context configuration
 
 External service integrations
 
-Presentation
+**Presentation**
 
 ASP.NET Core Web API
 
-Controllers and endpoints
+Controllers and HTTP endpoints
 
 Dependency injection configuration
 
-Features
+API routing and request handling
+
+**Features**
 
 Create student records
 
@@ -61,11 +74,11 @@ Retrieve student by ID
 
 Retrieve all students
 
-Clean layered architecture
+Structured layered architecture
 
-Dependency inversion principle implementation
+Implementation of Dependency Inversion Principle
 
-Technology Stack
+**Technology Stack**
 
 .NET / ASP.NET Core
 
@@ -75,11 +88,11 @@ Entity Framework Core
 
 SQL Server
 
-Onion Architecture
+Onion Architecture Pattern
 
-Dependency Injection
+Built-in Dependency Injection
 
-Project Structure
+**Project Structure**
 StudentManagement.OnionArchitecture.sln
 │
 ├── StudentManagement.Domain
@@ -87,24 +100,36 @@ StudentManagement.OnionArchitecture.sln
 ├── StudentManagement.Infrastructure
 └── StudentManagement.Presentation
 
-Design Principles
 
-Separation of concerns
+Each project has a clearly defined responsibility to enforce separation of concerns and maintain clean architectural boundaries.
 
-Single Responsibility Principle
+**Design Principles**
 
-Dependency inversion
+Separation of Concerns
 
-Framework-independent domain layer
+Single Responsibility Principle (SRP)
 
-Testable business logic
+Dependency Inversion Principle (DIP)
 
-Getting Started
+Framework-Independent Domain Layer
 
-Clone the repository
+Testable Business Logic
 
-Configure the database connection string
+**Getting Started**
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/StudentManagement.OnionArchitecture.git
 
-Apply migrations (if applicable)
+2️⃣ Configure Database
 
-Run the Presentation project
+Update the connection string in:
+
+appsettings.json
+
+3️⃣ Apply Migrations (If Applicable)
+dotnet ef database update
+
+4️⃣ Run the Application
+dotnet run --project StudentManagement.Presentation
+
+
+The API will start and be accessible via Swagger (if enabled).
